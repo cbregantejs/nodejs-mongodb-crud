@@ -4,8 +4,12 @@ import {uploadImage} from "../helpers/cloudinary.functions";
 
 export const getProducts = async (req, res) => {
     try{
+        let search = {};
+        if(req.query.search){
+            search = {title: {$regex: req.query.search, $options: "i"}}
+        }
         Product
-            .find()
+            .find(search)
             .then((data) => res.json(data))
             .catch((err) => res.json({message: err}));
     } catch (error) {

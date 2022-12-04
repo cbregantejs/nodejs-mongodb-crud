@@ -3,6 +3,7 @@ const router = express.Router();
 import { getProducts, getProductId, saveProduct, deleteProduct, updateProduct } from "../controllers/product.controller.js";
 
 // get all products
+// ?search=keyword -> search by keyword
 router.get("/products", getProducts)
 
 // get a product
