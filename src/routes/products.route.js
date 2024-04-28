@@ -4,19 +4,19 @@ import { getProducts, getProductId, saveProduct, deleteProduct, updateProduct } 
 
 // get all products
 // ?search=keyword -> search by keyword
-router.get("/products", getProducts)
+router.get("/", getProducts)
 
 // get a product
-router.get("/products/:id", getProductId);
+router.get("/:id", getProductId);
 
 // create product
-router.post("/products", saveProduct)
+router.post("/", saveProduct)
 
 // update a product
-router.put('/products/:id', updateProduct)
+router.put('/:id', updateProduct)
 
 // delete a product
-router.delete('/products/:id', deleteProduct)
+router.delete('/:id', deleteProduct)
 
 
 export default router;
